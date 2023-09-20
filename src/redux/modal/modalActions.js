@@ -1,16 +1,13 @@
 
-export const openModalA = () => ({
-  type: 'OPEN_MODAL_A',
-});
+export const setCurrentModal = (modalName) => {
+  return {
+    type: 'SET_CURRENT_MODAL',
+    payload: modalName,
+  };
+};
 
-export const closeModalA = () => ({
-  type: 'CLOSE_MODAL_A',
-});
-
-export const openModalB = () => ({
-  type: 'OPEN_MODAL_B',
-});
-
-export const closeModalB = () => ({
-  type: 'CLOSE_MODAL_B',
-});
+export const closeModal = () => {
+  return {
+    type: 'CLOSE_MODAL',
+  };
+}

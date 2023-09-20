@@ -1,38 +1,21 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
 import { connect } from "react-redux";
-import {
-  openModalA,
-  closeModalA,
-  openModalB,
-  closeModalB,
-} from "../redux/modal/modalActions";
+import  ModalA  from "./ModalA";
+import  ModalB  from "./ModalB";
+import { setCurrentModal } from '../redux/modal/modalActions';
 
-const MainScreen = ({
-  showModalA,
-  showModalB,
-  openModalA,
-  closeModalA,
-  openModalB,
-  closeModalB,
-}) => {
+const MainScreen = ({ setCurrentModal }) => {
+
+  const dispatch = useDispatch();
+  const currentModal = useSelector(state => state.modals.currentModal); 
+
   const handleOpenModalA = () => {
-    openModalA();
-    console.log("startModalA");
-  };
-
-  const handleCloseModalA = () => {
-    closeModalA();
-    console.log("closeModalA");
+    setCurrentModal('ModalA');
   };
 
   const handleOpenModalB = () => {
-    openModalB();
-    console.log("startModalB");
-  };
-
-  const handleCloseModalB = () => {
-    closeModalB();
-    console.log("closeModalB");
+    setCurrentModal('ModalB');
   };
 
   return (
@@ -41,7 +24,7 @@ const MainScreen = ({
         <div className="col-md-6">
           <button
             className="btn btn-primary btn-block"
-            onClick={showModalA ? handleCloseModalA : handleOpenModalA}
+            onClick={handleOpenModalA}
           >
             Button A
           </button>
@@ -49,26 +32,19 @@ const MainScreen = ({
         <div className="col-md-6">
           <button
             className="btn btn-secondary btn-block"
-            onClick={showModalB ? handleCloseModalB : handleOpenModalB}
+            onClick={handleOpenModalB}
           >
             Button B
           </button>
         </div>
       </div>
+      {currentModal === "ModalA" ? <ModalA /> : currentModal === "ModalB" ? <ModalB /> : null}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  showModalA: state.modals.showModalA,
-  showModalB: state.modals.showModalB,
-});
-
 const mapDispatchToProps = {
-  openModalA,
-  closeModalA,
-  openModalB,
-  closeModalB,
+  setCurrentModal,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);
+export default connect(null, mapDispatchToProps)(MainScreen);
