@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { connect } from "react-redux";
 import  ModalA  from "./ModalA";
 import  ModalB  from "./ModalB";
@@ -7,7 +7,7 @@ import { setCurrentModal } from '../redux/modal/modalActions';
 
 const MainScreen = ({ setCurrentModal }) => {
 
-  const dispatch = useDispatch();
+// const dispatch = useDispatch();
   const currentModal = useSelector(state => state.modals.currentModal); 
 
   const handleOpenModalA = () => {

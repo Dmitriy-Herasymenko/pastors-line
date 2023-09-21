@@ -11,3 +11,17 @@ export const closeModal = () => {
     type: 'CLOSE_MODAL',
   };
 }
+
+export const toggleCheckbox = (isChecked) => {
+  return {
+    type: 'TOGGLE_CHECKBOX',
+    payload: isChecked,
+  };
+};
+
+export const setCurrentContact = (contact) => {
+  return {
+    type: 'SET_CURRENT_CONTACT',
+    payload: contact,
+  };
+};
