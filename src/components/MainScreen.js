@@ -18,7 +18,6 @@ const MainScreen = ({ setCurrentModal }) => {
     setCurrentModal('ModalB');
   };
 
-  console.log("currentModal", currentModal)
   return (
     <div className="container mt-5">
       <div className="row d-flex justify-content-center">
@@ -26,6 +25,7 @@ const MainScreen = ({ setCurrentModal }) => {
           <button
             className="btn btn-primary btn-block"
             onClick={handleOpenModalA}
+            style={{backgroundColor: "#46139f"}}
           >
             Button A
           </button>
@@ -34,6 +34,7 @@ const MainScreen = ({ setCurrentModal }) => {
           <button
             className="btn btn-secondary btn-block"
             onClick={handleOpenModalB}
+            style={{backgroundColor: "#ff7f50"}}
           >
             Button B
           </button>
