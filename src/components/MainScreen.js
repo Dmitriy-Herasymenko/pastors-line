@@ -18,6 +18,7 @@ const MainScreen = ({ setCurrentModal }) => {
     setCurrentModal('ModalB');
   };
 
+  console.log("currentModal", currentModal)
   return (
     <div className="container mt-5">
       <div className="row d-flex justify-content-center">

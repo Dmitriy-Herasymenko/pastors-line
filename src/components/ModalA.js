@@ -55,10 +55,10 @@ const ModalA = () => {
               "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjU2MCwiZXhwIjoxNzI2NTY3MTc5LCJ0eXBlIjoiYWNjZXNzIiwidGltZXN0YW1wIjoxNjk1MDMxMTc5fQ.0y7NtuVDCvcPvmWbliMs1q02sov2oFC6u2Hi6H4A2W4",
           },
           params: {
-            companyId: 171,
+            companyId: 560,
             //query: "",
             page: 1,
-            countryId: 226,
+            //countryId: 226,
           },
         }
       );
@@ -113,18 +113,9 @@ const ModalA = () => {
               <div className="d-flex justify-content-center">
                 <div className="btn-group p-2" role="group">
                   <button type="button" className="btn btn-primary"  onClick={() => loadContactsFromApi()}>
-                    Modal Button A
+                  All Contacts
                   </button>
-                  <button type="button" className="btn btn-primary">
-                    Modal Button B
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() => dispatch(closeModal())}
-                  >
-                    Modal Button C
-                  </button>
+           
                 </div>
               </div>
               <div className="mt-3">
